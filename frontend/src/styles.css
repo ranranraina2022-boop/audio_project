@@ -51,9 +51,14 @@ h1 {
   gap: 1rem;
 }
 
-h2 {
+h2,
+h3 {
   margin: 0;
   font-size: 1rem;
+}
+
+h3 {
+  margin-top: 1rem;
 }
 
 button {
@@ -80,6 +85,43 @@ button:disabled {
   color: #b91c1c;
 }
 
+.warning {
+  color: #9a3412;
+}
+
+.status {
+  margin-top: 0.75rem;
+  font-weight: 650;
+}
+
+.meta {
+  margin: 0.35rem 0 0;
+  color: #78716c;
+  font-size: 0.875rem;
+}
+
+.poi-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.poi-list li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.reply-audio {
+  display: block;
+  width: min(100%, 24rem);
+  margin-top: 0.75rem;
+}
+
+.reply-audio.is-hidden {
+  display: none;
+}
+
 pre {
   margin: 0.75rem 0 0;
   padding: 0.75rem;
@@ -87,4 +129,93 @@ pre {
   background: #fafaf9;
   border-radius: 8px;
   font-size: 0.875rem;
+}
+
+.hint {
+  margin: 0.75rem 0 0;
+  color: #57534e;
+}
+
+.city-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+}
+
+select {
+  width: 12rem;
+  border: 1px solid #d6d3d1;
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: #fff;
+  font: inherit;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.record-button {
+  min-width: 11rem;
+  min-height: 3.4rem;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.05rem;
+  touch-action: none;
+  user-select: none;
+}
+
+.record-button.is-recording {
+  background: #9f1239;
+}
+
+.ghost {
+  background: #fff;
+  color: #1c1917;
+  border: 1px solid #d6d3d1;
+}
+
+.timer {
+  margin: 0.75rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.clip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.clip audio {
+  width: min(100%, 24rem);
+}
+
+.clip-meta {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.clip-meta div {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.clip-meta dt {
+  width: 5.5rem;
+  color: #78716c;
+}
+
+.clip-meta dd {
+  margin: 0;
+}
+
+.clip a {
+  color: #1c1917;
 }

@@ -7,9 +7,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from api.asr import router as asr_router
+from api.extract import router as extract_router
+from api.finalize import router as finalize_router
 from api.health import router as health_router
+from api.search import router as search_router
+from api.upload import router as upload_router
 from config import settings
-from schemas import error_response
+from schemas import ApiError, error_response
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +55,14 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     )
 
 
+@app.exception_handler(ApiError)
+async def api_error_handler(request: Request, exc: ApiError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=error_response(request, exc.code, exc.message, exc.stage),
+    )
+
+
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     return JSONResponse(
@@ -70,3 +83,8 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
 
 
 app.include_router(health_router)
+app.include_router(upload_router)
+app.include_router(asr_router)
+app.include_router(extract_router)
+app.include_router(search_router)
+app.include_router(finalize_router)

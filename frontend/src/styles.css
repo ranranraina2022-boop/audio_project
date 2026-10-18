@@ -1,0 +1,90 @@
+:root {
+  color: #1c1917;
+  background: #f6f3ef;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #78716c;
+  font-size: 0.875rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 650;
+}
+
+.lead {
+  margin: 0.75rem 0 0;
+  color: #44403c;
+}
+
+.card {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 12px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  background: #1c1917;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.ok {
+  color: #166534;
+  font-weight: 650;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+pre {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem;
+  overflow: auto;
+  background: #fafaf9;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
